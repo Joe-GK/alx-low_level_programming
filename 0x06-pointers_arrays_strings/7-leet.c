@@ -1,32 +1,25 @@
-#include "holberton.h"
-
+#include "main.h"
 /**
- * leet - Encode a string into 1337
- * @s: string
- * Return: string
+ * leet - encode into 1337speak
+ * @n: input value
+ *
+ * Return: n value
  */
-
-char *leet(char *s)
+char *leet(char *n)
 {
-int x, y, z;
-char letter[] = "aAeEoOtTlL";
-char new[] = "4433007711";
+	int x, y;
+	char m[] = "aAeEoOtTlL";
+	char w[] = "4433007711";
 
-x = 0;
-while (s[x] != '\0')
-{
-	y = 0;
-	z = 0;
-	while (letter[y] != '\0')
+	for (x = 0; n[x] != '\0'; x++)
 	{
-		if (s[x] == letter[y])
+		for (y = 0; y < 10; y++)
 		{
-			z = y;
-			s[x] = new[z];
+			if (n[x] == m[y])
+			{
+				n[x] = w[y];
+			}
 		}
-		y++;
 	}
-	x++;
-}
-return (s);
+	return (n);
 }
